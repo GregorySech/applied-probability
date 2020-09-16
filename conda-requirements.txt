@@ -1,0 +1,5 @@
+jupyter
+pip
+r-essentials
+r-base
+xeus-cling

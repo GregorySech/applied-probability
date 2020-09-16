@@ -1,0 +1,8 @@
+# Book settings
+title: Applied Probability Notes
+author: Gregory Sech
+logo: logo_unive.png
+
+latex:
+  latex_documents:
+    targetname: applied-probability-notes.tex
