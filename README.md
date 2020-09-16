@@ -1,5 +1,5 @@
 # Master Degree Notes
-These are my notes from the Master's Degree Programme course that I was able to attend.
+These are my notes from the Master's Degree Programme course Applied Probability for Computer Science by [Professor Antoniano Villalobos](https://www.unive.it/data/persone/20055797).
 
 # Technologies
 
@@ -32,15 +32,6 @@ jupyter-book build <course folder path> --builder pdflatex
 ### Cleaning the build outputs
 ```bash
 jupyter-book clean <course folder path>
-```
-
-## [xeus-cling](https://github.com/jupyter-xeus/xeus-cling)
-This is a Jupyter kernel to create notebooks with C++ based on the `cling` interpreter.
-
-### Installation
-
-```bash
-conda install xeus-cling -c conda-forge
 ```
 
 ## [IRKernel](https://github.com/IRkernel/IRkernel)
