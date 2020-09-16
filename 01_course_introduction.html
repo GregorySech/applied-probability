@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course introduction &#8212; Applied Probability Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_unive.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Applied Probability Notes</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Course introduction
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/01_course_introduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/01_course_introduction.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/01_course_introduction.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#textbox">
+   Textbox
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exam">
+   Exam
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#written-exam">
+     Written exam
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#project">
+     Project
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extra-points">
+     Extra points
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#languages">
+   Languages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-contents">
+   Course contents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#presentation">
+   Presentation
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="course-introduction">
+<h1>Course introduction<a class="headerlink" href="#course-introduction" title="Permalink to this headline">¶</a></h1>
+<p>This is a new course from <a class="reference external" href="https://www.unive.it/data/persone/20055797">Prof. Isadora Antoniano Villalobos</a> substituting the course Spatio-temporal Analysis.</p>
+<p>As students into the Master’s Degree often come from different paths of life one of the course objectives is to prepare the students to statistical concepts that will be usefull for their future (not only academic).</p>
+<div class="section" id="textbox">
+<h2>Textbox<a class="headerlink" href="#textbox" title="Permalink to this headline">¶</a></h2>
+<p>The course textbook is <a class="reference external" href="https://books.google.it/books/about/Probability_and_Statistics_for_Computer.html?id=fkDADwAAQBAJ&amp;redir_esc=y">Probability and Statistics for Computer Scientists</a> which can be consulded also in digital form through the university bibliotecary system.</p>
+</div>
+<div class="section" id="exam">
+<h2>Exam<a class="headerlink" href="#exam" title="Permalink to this headline">¶</a></h2>
+<p>Examination is composed by:</p>
+<div class="section" id="written-exam">
+<h3>Written exam<a class="headerlink" href="#written-exam" title="Permalink to this headline">¶</a></h3>
+<p>A written exam worth 25 points (as in grades). It is open book and open computer however this doesn’t make it easy.<br />
+It is supposed to be easy for anyone who understands the concepts and has studied otherwise you will be <strong>too slow</strong> to do it on time.
+Theory will be evaluated with <em>questions</em> (no proofs by memory) and by the conseguent speed up in solving the <em>exercises</em>.</p>
+</div>
+<div class="section" id="project">
+<h3>Project<a class="headerlink" href="#project" title="Permalink to this headline">¶</a></h3>
+<p>This is a group effort worth at most 5 points. All members of the team get the same grade.<br />
+During the course <em>ideas</em> and <em>themes</em> for projects will be brought up but the team should consult the teacher about choosing which project to do and how many points it will be worth.</p>
+</div>
+<div class="section" id="extra-points">
+<h3>Extra points<a class="headerlink" href="#extra-points" title="Permalink to this headline">¶</a></h3>
+<p>During lessons the teacher might prompt an exercise/question that the students will have to solve.
+Depending on the performance extra points will be assigned:</p>
+<ul class="simple">
+<li><p>full point for a correct answer</p></li>
+<li><p>0 for not answering</p></li>
+<li><p>.5 point for an incorrect answer</p></li>
+<li><p>negative point for a terribly incorrect answer. An answer is terribly incorrect when it was specificly pointed out by the teacher during the various lessons.</p></li>
+</ul>
+<p>You can gather no more than 3 extra points for your grade. Based on your percentile you get a part of the points</p>
+</div>
+</div>
+<div class="section" id="languages">
+<h2>Languages<a class="headerlink" href="#languages" title="Permalink to this headline">¶</a></h2>
+<p>The course will be in R but if you can do the same things in other languages you are free to do it.</p>
+<p>The notes will be made using R-based Jupyter Notebooks at first, maybe if I have some free time I might implement also a version in Python but I’m not promising anything.</p>
+</div>
+<div class="section" id="course-contents">
+<h2>Course contents<a class="headerlink" href="#course-contents" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Probability core</strong> chapters 1-4: this is supposed to be a prerequisite but it will be covered never the less as even if this has been seen it in the bachelor degree doesn’t mean you <strong>know</strong> it.</p></li>
+<li><p><strong>Monte Carlo Methods</strong> chapter 5: a project from this could be based on Weak and Strong Law of Large Numbers as it is an important result that is not covered here.</p></li>
+<li><p><strong>Stochastic Processes</strong> chapter 6</p></li>
+<li><p><strong>Simulation of Stochastic Processes</strong> chapter 6.4: all that is skipped between this and chapter 5 can be used in projects.</p></li>
+<li><p><strong>Queuing Theory</strong> chapter 7: this would be part of the course but we cannot guarantee that there is enough time. Also all that is skipped can be used in projects.</p></li>
+<li><p><strong>Statistics Core</strong> chapters 8-9: this would be quite useful (even more than useful!) as a lot of future courses take concepts from this as known however it will only be introduced as intuitions.</p></li>
+</ul>
+</div>
+<div class="section" id="presentation">
+<h2>Presentation<a class="headerlink" href="#presentation" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Probability</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">science</span> <span class="pre">of</span> <span class="pre">uncertainty.</span></code></p>
+<p>The oldest trick in the mathematics book is taking an object, anything, and model their characteristics (completely or partially).</p>
+<p>We can use probability to measure how likely is for a physical event to happen depending on a mathematical model.</p>
+<p>Games are great tool for studying probabiliy as it was born from it since the dawn of betting as it is foundamental to find strategies to legally win a game most of the times.</p>
+<p>In the 1700s there were a clique of nobles that during a war were playing dice. The problem thay faced was choosing who should win the pot if the game was forcebly interrupted. The study of this problem gave birth to modern probability.</p>
+<p>The relation between “random objects” can be mathematically modeled. This model is a <em>Stochastic Process</em>.</p>
+<p>If there is uncertainty about something it can be studied with probability.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Welcome to your Jupyter Book</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Gregory Sech<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
