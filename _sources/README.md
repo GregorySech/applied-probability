@@ -1,5 +1,14 @@
-# Master Degree Notes
-These are my notes from the Master's Degree Programme course Applied Probability for Computer Science by [Professor Antoniano Villalobos](https://www.unive.it/data/persone/20055797).
+# Applied Probability for Computer Science Notes
+These are my notes from the Master's Degree Programme course Applied Probability for Computer Science by [Prof. Antoniano Villalobos](https://www.unive.it/data/persone/20055797).
+
+# Disclaimer
+As these are my personal notes I might have misunderstood or came up to wrong 
+conclusions during the lessons. For these mistakes I apologize in advance and 
+incourage anyone in submitting either a GitHub issue on this repository so that 
+I will fix the mistake as soon as possible or directly submit a pull request.
+
+The course content is a selection from the textbook [Probability and Statistics for Computer Scientists](https://books.google.it/books/about/Probability_and_Statistics_for_Computer.html?id=fkDADwAAQBAJ&redir_esc=y) of
+which I'm not the author.
 
 # Technologies
 
