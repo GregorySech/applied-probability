@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample spaces and how big they can be &#8212; Applied Probability Notes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Course introduction" href="01_course_introduction.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo_unive.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Applied Probability Notes</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_course_introduction.html">
+   Course introduction
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Sample spaces and how big they can be
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#probability-space">
+   Probability Space
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/02_review_mathematics_probability.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#infinite-sums-and-integration">
+   Infinite sums and integration
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concepts-that-we-need-to-know-review-on-our-own">
+   Concepts that we need to know (review on our own)
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="sample-spaces-and-how-big-they-can-be">
+<h1>Sample spaces and how big they can be<a class="headerlink" href="#sample-spaces-and-how-big-they-can-be" title="Permalink to this headline">¶</a></h1>
+<p>A <strong>sample space</strong> <span class="math notranslate nohighlight">\(\Omega\)</span> is the set of all possible outcomes of an experiment.<br />
+An <strong>event</strong> is a subset of <span class="math notranslate nohighlight">\(\Omega\)</span> (the sample space). We will use Capital letters to denote events. Most used ones are <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\#\Omega = 1\)</span> means that we have an experiment that allows only a possible outcome and is therefore <em>deterministic</em>.<br />
+Usually we start thinking about sample spaces as finite (<span class="math notranslate nohighlight">\(\#\Omega \in \mathbb{N}\)</span>), however we can also have an sample space <span class="math notranslate nohighlight">\(\#\Omega = \#\mathbb{Z}\)</span> containing infinite possible outcomes.</p>
+<p>Remember that infinities do not behave like we expect: <span class="math notranslate nohighlight">\(\#\mathbb{Z} = \#\mathbb{N}\)</span> even though <span class="math notranslate nohighlight">\(\mathbb{N} \subset \mathbb{Z}\)</span>.<br />
+Informally we can write: <span class="math notranslate nohighlight">\(\frac{\#\mathbb{N}}{\#\mathbb{Z}} = 1\)</span> to deliver the point that the set of natural numbers and integers are countable and their “infinity” is equal. Also we could informally state that <span class="math notranslate nohighlight">\(\frac{\#\mathbb{N}}{\#\mathbb{R}} = 0\)</span> to say that the cardinality of the set of real numbers is infinitly larger than the cardinality of countable sets like the set of natural numbers.</p>
+<p>We can also have sample spaces that are infinite and <strong>countable</strong> but also we can have cases where the sample space is <strong>uncountable</strong> <span class="math notranslate nohighlight">\(\#\Omega = \#\mathbb{R}\)</span>.
+These are cases where the possible outcomes cannot be counted and in the future we will have to deal with them in a different way in respect of the countable case.</p>
+<div class="section" id="infinite-sums-and-integration">
+<h2>Infinite sums and integration<a class="headerlink" href="#infinite-sums-and-integration" title="Permalink to this headline">¶</a></h2>
+<p>We can sum countable many numbers
+<span class="math notranslate nohighlight">\(
+\sum^\infty_{i=1} x_i = \sum^\infty_{i\in\mathbb{N}} x_i 
+\)</span></p>
+<p>We cannot sum all the uncountable numbers but if they satisfy a condition (being infinitly small, this is what <span class="math notranslate nohighlight">\(dx\)</span> actually means) we can integrate them.
+<span class="math notranslate nohighlight">\(
+\int_{x \in \mathbb{R}}{f(x)dx}
+\)</span></p>
+<p>The largest event in <span class="math notranslate nohighlight">\(\Omega\)</span> is <span class="math notranslate nohighlight">\(\Omega\)</span> itself which is called the <em>certain event</em>.<br />
+The smallest one is the empty set <span class="math notranslate nohighlight">\(\varnothing\)</span> which is also called the <em>impossible event</em>.</p>
+</div>
+<div class="section" id="concepts-that-we-need-to-know-review-on-our-own">
+<h2>Concepts that we need to know (review on our own)<a class="headerlink" href="#concepts-that-we-need-to-know-review-on-our-own" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Intersection, union, complement, difference on sets.</p></li>
+<li><p>Venn diagrams.</p></li>
+<li><p>De Morgan’s Laws.</p></li>
+<li><p>Integration.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="probability-space">
+<h1>Probability Space<a class="headerlink" href="#probability-space" title="Permalink to this headline">¶</a></h1>
+<p>A <strong>probability space</strong> is a triple composed by: a sample space (<span class="math notranslate nohighlight">\(\Omega\)</span>), a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra (<span class="math notranslate nohighlight">\(\mathfrak{M}\)</span>) and a probability measure(<span class="math notranslate nohighlight">\(\mathbb{P}\)</span>).</p>
+<div class="section" id="sigma-algebra">
+<h2><span class="math notranslate nohighlight">\(\sigma\)</span>-algebra<a class="headerlink" href="#sigma-algebra" title="Permalink to this headline">¶</a></h2>
+<p>A sigma algebra is a set of subets of <span class="math notranslate nohighlight">\(\Omega\)</span> which satisfy these properties:</p>
+<ol class="simple">
+<li><p>The sample space <span class="math notranslate nohighlight">\(\Omega\)</span> is an element of the sigma algebra. <span class="math notranslate nohighlight">\(\Omega \in \mathfrak{M}\)</span>. If something happens that it could happen.</p></li>
+<li><p>Everytime I have an event, its complement must also be in the sigma algebra. <span class="math notranslate nohighlight">\(\forall E \in \mathfrak{M}: \bar{E} \in \mathfrak{M}\)</span>.</p></li>
+<li><p>The union of a series of event is part of the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(E_1, E_2, ... \implies \bigcup E_i \in \mathfrak{M}\)</span>. Whenever I have a sequence of event I also have their union. A sequence is an “or” between events. And I can use the third axiom of probability, with some tricks, to measure its probability.</p></li>
+</ol>
+</div>
+<div class="section" id="axioms-of-probability">
+<h2>Axioms of probability<a class="headerlink" href="#axioms-of-probability" title="Permalink to this headline">¶</a></h2>
+<p>The axioms of probability defines the properties of a probability function however we should not forget that a probability is a mathematical <em>MEASURE</em>. It is used to compare uncertainty of events.</p>
+<p>If we have a sample space <span class="math notranslate nohighlight">\(\Omega\)</span> with a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\mathfrak{M}\)</span> probability is a function that maps the domain <span class="math notranslate nohighlight">\(\mathfrak{M}\)</span> to the interval <span class="math notranslate nohighlight">\([0, 1]\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\mathbb{P}:\mathfrak{M} \rightarrow [0, 1]\)</span></p>
+<p>The axioms of probability are:</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}(\Omega) = 1\)</span> this is also called <em>unit measure</em>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(0 \le \mathbb{P}(E) \le 1\)</span>, this is a consequence of the codomain definition.</p></li>
+<li><p>Given a countable collection of mutually exclusive events such as all the events are present in <span class="math notranslate nohighlight">\(\mathfrak{M}\)</span> then:
+<span class="math notranslate nohighlight">\(\mathbb{P}[E_1 \cup ... \cup E_n] = \sum_{i=0}^n \mathbb{P}(E_i)\)</span>.</p></li>
+</ol>
+<div class="section" id="terrible-errors">
+<h3>Terrible Errors<a class="headerlink" href="#terrible-errors" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>If the teacher asks for a probability and you get a greater than 1 or less than 0 value that will be a Terrible Error.</p></li>
+<li><p>An obvious contradiction of the axioms of probability is considered a Terrible Error.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="consequences">
+<h2>Consequences<a class="headerlink" href="#consequences" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}(E) = 1 - \mathbb{P}(\bar{E})\)</span>. Once we know the probability of an event, also the probability of its <em>complement</em> is known.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cap B)\)</span>. To properly measure the probability of an union of events we must take into consideration that summing the probabilities could count more than once for the intersection of events.</p></li>
+<li><p><span class="math notranslate nohighlight">\(A \subset B \implies \mathbb{P}(A) \leq \mathbb{P}(B)\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}(A \cap B) \leq \mathbb{P}(A)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}(A \cap B) \leq \mathbb{P}(B)\)</span></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="on-calculating-the-probability-of-unions-of-events">
+<h3>On calculating the probability of unions of events<a class="headerlink" href="#on-calculating-the-probability-of-unions-of-events" title="Permalink to this headline">¶</a></h3>
+<p><span class="math notranslate nohighlight">\(A, B \in \mathfrak{M} \quad \mathbb{P}(A \cup B) = \mathbb{P}(A) + \mathbb{P}(B) - \mathbb{P}(A \cup B)\)</span></p>
+<p>If <span class="math notranslate nohighlight">\(A, B\)</span> are disjoint <span class="math notranslate nohighlight">\(\implies A \cap B = \varnothing\)</span> so we are “safe” however if this is not the case this can get hairy.<br />
+For example consider the union of three events <span class="math notranslate nohighlight">\(A, B, C\)</span>:
+<span class="math notranslate nohighlight">\(\mathbb{P}(A\cup B \cup C) = \mathbb{P}(A) + \mathbb{P}(B) + \mathbb{P}(C) - \mathbb{P}(A \cap B) - \mathbb{P}(A \cap C) - \mathbb{P}(B \cap C) + \mathbb{P}(A \cap B \cap C)\)</span></p>
+<p>What happens if I have countable many sets?<br />
+This could be a project that has to do with the Principle of inclusion/exclusion, Bonferroni Inequalities.</p>
+</div>
+</div>
+<div class="section" id="probability-as-a-measure">
+<h2>Probability as a measure<a class="headerlink" href="#probability-as-a-measure" title="Permalink to this headline">¶</a></h2>
+<p>Suppose that we have a rectangle of area 1 representing our sample space <span class="math notranslate nohighlight">\(\Omega\)</span>.<br />
+We could represent events proportionally to their probability.</p>
+<p>For a couple of events <span class="math notranslate nohighlight">\(A, B\)</span> they could have an intersection but which intersection has 0 probability, especially for uncountable sample spaces.</p>
+</div>
+<div class="section" id="examples-of-sigma-algebras">
+<h2>Examples of <span class="math notranslate nohighlight">\(\sigma\)</span>-algebras<a class="headerlink" href="#examples-of-sigma-algebras" title="Permalink to this headline">¶</a></h2>
+<p>The simple possible experiment in probability has 2 possible outcomes. <span class="math notranslate nohighlight">\( \Omega = \left\{ 0, 1\right\}\)</span> .<br />
+The smallest <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra we can come up with is: <span class="math notranslate nohighlight">\(\mathfrak{M} = \left\{ \Omega, \varnothing \right\} \)</span></p>
+<p>This is called a Trivial <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra as it is quite possibly useless.</p>
+<p>Another possible sigma algebra from that defined sample space could be the partition set <span class="math notranslate nohighlight">\(\mathscr{P}(\Omega)\)</span>, which adds the singletons to the trivial <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra.</p>
+<p><span class="math notranslate nohighlight">\(\mathfrak{M} = \{\Omega, \varnothing, \{0\}, \{1\}\}\)</span></p>
+<p>Usually a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is composed by what we CAN measure during our experiment.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="01_course_introduction.html" title="previous page">Course introduction</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Gregory Sech<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
