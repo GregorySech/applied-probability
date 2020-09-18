@@ -1,4 +1,7 @@
-# Sample spaces and how big they can be
+# Probability Space
+A **probability space** is a triple composed by: a sample space ($\Omega$), a $\sigma$-algebra ($\mathfrak{M}$) and a probability measure($\mathbb{P}$).
+
+## Sample spaces and how big they can be
 
 A **sample space** $\Omega$ is the set of all possible outcomes of an experiment.  
 An **event** is a subset of $\Omega$ (the sample space). We will use Capital letters to denote events. Most used ones are $E$ and $A$.
@@ -33,8 +36,6 @@ The smallest one is the empty set $\varnothing$ which is also called the *imposs
 - De Morgan's Laws.
 - Integration.
 
-# Probability Space
-A **probability space** is a triple composed by: a sample space ($\Omega$), a $\sigma$-algebra ($\mathfrak{M}$) and a probability measure($\mathbb{P}$).
 
 ## $\sigma$-algebra
 A sigma algebra is a set of subets of $\Omega$ which satisfy these properties:
@@ -52,7 +53,7 @@ $\mathbb{P}:\mathfrak{M} \rightarrow [0, 1]$
 
 The axioms of probability are:
 
-1. $\mathbb{P}(\Omega) = 1$ this is also called *unit measure*.
+1. $\mathbb{P}(\Omega) = 1$.
 2. $0 \le \mathbb{P}(E) \le 1$, this is a consequence of the codomain definition.
 3. Given a countable collection of mutually exclusive events such as all the events are present in $\mathfrak{M}$ then:
 $\mathbb{P}[E_1 \cup ... \cup E_n] = \sum_{i=0}^n \mathbb{P}(E_i)$.

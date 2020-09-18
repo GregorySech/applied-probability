@@ -1,5 +1,7 @@
 # Applied Probability for Computer Science Notes
-These are my notes from the Master's Degree Programme course Applied Probability for Computer Science by [Prof. Antoniano Villalobos](https://www.unive.it/data/persone/20055797).
+These are my notes from the Master's Degree Programme course 
+[[CM0546] Applied Probability for Computer Science](https://www.unive.it/data/insegnamento/335487) 
+by [Prof. Antoniano Villalobos](https://www.unive.it/data/persone/20055797).
 
 # Disclaimer
 As these are my personal notes I might have misunderstood or came up to wrong 
