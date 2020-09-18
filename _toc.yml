@@ -1,4 +1,3 @@
-- file: intro
-  sections:
-    - file: 01_course_introduction
-    - file: 02_review_mathematics_probability
+- file: README
+- file: 01_course_introduction
+- file: 02_review_mathematics_probability
