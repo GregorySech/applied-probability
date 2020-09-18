@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sample spaces and how big they can be &#8212; Applied Probability Notes</title>
+    <title>Probability Space &#8212; Applied Probability Notes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -85,11 +85,6 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Sample spaces and how big they can be
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#probability-space">
    Probability Space
   </a>
  </li>
@@ -164,6 +159,11 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sample-spaces-and-how-big-they-can-be">
+   Sample spaces and how big they can be
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#infinite-sums-and-integration">
    Infinite sums and integration
   </a>
@@ -171,6 +171,52 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#concepts-that-we-need-to-know-review-on-our-own">
    Concepts that we need to know (review on our own)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sigma-algebra">
+   <span class="math notranslate nohighlight">
+    \(\sigma\)
+   </span>
+   -algebra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#axioms-of-probability">
+   Axioms of probability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#terrible-errors">
+     Terrible Errors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#consequences">
+   Consequences
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#on-calculating-the-probability-of-unions-of-events">
+     On calculating the probability of unions of events
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-as-a-measure">
+   Probability as a measure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples-of-sigma-algebras">
+   Examples of
+   <span class="math notranslate nohighlight">
+    \(\sigma\)
+   </span>
+   -algebras
   </a>
  </li>
 </ul>
@@ -183,8 +229,11 @@
         
               <div>
                 
-  <div class="section" id="sample-spaces-and-how-big-they-can-be">
-<h1>Sample spaces and how big they can be<a class="headerlink" href="#sample-spaces-and-how-big-they-can-be" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="probability-space">
+<h1>Probability Space<a class="headerlink" href="#probability-space" title="Permalink to this headline">¶</a></h1>
+<p>A <strong>probability space</strong> is a triple composed by: a sample space (<span class="math notranslate nohighlight">\(\Omega\)</span>), a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra (<span class="math notranslate nohighlight">\(\mathfrak{M}\)</span>) and a probability measure(<span class="math notranslate nohighlight">\(\mathbb{P}\)</span>).</p>
+<div class="section" id="sample-spaces-and-how-big-they-can-be">
+<h2>Sample spaces and how big they can be<a class="headerlink" href="#sample-spaces-and-how-big-they-can-be" title="Permalink to this headline">¶</a></h2>
 <p>A <strong>sample space</strong> <span class="math notranslate nohighlight">\(\Omega\)</span> is the set of all possible outcomes of an experiment.<br />
 An <strong>event</strong> is a subset of <span class="math notranslate nohighlight">\(\Omega\)</span> (the sample space). We will use Capital letters to denote events. Most used ones are <span class="math notranslate nohighlight">\(E\)</span> and <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\#\Omega = 1\)</span> means that we have an experiment that allows only a possible outcome and is therefore <em>deterministic</em>.<br />
@@ -193,6 +242,7 @@ Usually we start thinking about sample spaces as finite (<span class="math notra
 Informally we can write: <span class="math notranslate nohighlight">\(\frac{\#\mathbb{N}}{\#\mathbb{Z}} = 1\)</span> to deliver the point that the set of natural numbers and integers are countable and their “infinity” is equal. Also we could informally state that <span class="math notranslate nohighlight">\(\frac{\#\mathbb{N}}{\#\mathbb{R}} = 0\)</span> to say that the cardinality of the set of real numbers is infinitly larger than the cardinality of countable sets like the set of natural numbers.</p>
 <p>We can also have sample spaces that are infinite and <strong>countable</strong> but also we can have cases where the sample space is <strong>uncountable</strong> <span class="math notranslate nohighlight">\(\#\Omega = \#\mathbb{R}\)</span>.
 These are cases where the possible outcomes cannot be counted and in the future we will have to deal with them in a different way in respect of the countable case.</p>
+</div>
 <div class="section" id="infinite-sums-and-integration">
 <h2>Infinite sums and integration<a class="headerlink" href="#infinite-sums-and-integration" title="Permalink to this headline">¶</a></h2>
 <p>We can sum countable many numbers
@@ -215,10 +265,6 @@ The smallest one is the empty set <span class="math notranslate nohighlight">\(\
 <li><p>Integration.</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="probability-space">
-<h1>Probability Space<a class="headerlink" href="#probability-space" title="Permalink to this headline">¶</a></h1>
-<p>A <strong>probability space</strong> is a triple composed by: a sample space (<span class="math notranslate nohighlight">\(\Omega\)</span>), a <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra (<span class="math notranslate nohighlight">\(\mathfrak{M}\)</span>) and a probability measure(<span class="math notranslate nohighlight">\(\mathbb{P}\)</span>).</p>
 <div class="section" id="sigma-algebra">
 <h2><span class="math notranslate nohighlight">\(\sigma\)</span>-algebra<a class="headerlink" href="#sigma-algebra" title="Permalink to this headline">¶</a></h2>
 <p>A sigma algebra is a set of subets of <span class="math notranslate nohighlight">\(\Omega\)</span> which satisfy these properties:</p>
@@ -235,7 +281,7 @@ The smallest one is the empty set <span class="math notranslate nohighlight">\(\
 <p><span class="math notranslate nohighlight">\(\mathbb{P}:\mathfrak{M} \rightarrow [0, 1]\)</span></p>
 <p>The axioms of probability are:</p>
 <ol class="simple">
-<li><p><span class="math notranslate nohighlight">\(\mathbb{P}(\Omega) = 1\)</span> this is also called <em>unit measure</em>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{P}(\Omega) = 1\)</span>.</p></li>
 <li><p><span class="math notranslate nohighlight">\(0 \le \mathbb{P}(E) \le 1\)</span>, this is a consequence of the codomain definition.</p></li>
 <li><p>Given a countable collection of mutually exclusive events such as all the events are present in <span class="math notranslate nohighlight">\(\mathfrak{M}\)</span> then:
 <span class="math notranslate nohighlight">\(\mathbb{P}[E_1 \cup ... \cup E_n] = \sum_{i=0}^n \mathbb{P}(E_i)\)</span>.</p></li>
