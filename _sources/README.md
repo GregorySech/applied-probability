@@ -35,9 +35,9 @@ At the time of writing JupyterBook is not installable through Anaconda but only 
 pip install jupyter-book
 ```
 
-### Building a course's notes
+### Building a PDF for the notes
 ```bash 
-jupyter-book build <course folder path> --builder pdflatex
+jupyter-book build <course folder path> --builder pdfhtml
 ```
 
 ### Cleaning the build outputs
